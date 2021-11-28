@@ -1,0 +1,26 @@
+= Demo REST API em Go com Integração MySQL 
+    
+== Iniciando a aplicação
+
+Deve ser criado uma base de dados para que a aplicação consiga se conectar. Os dados base podem ser encontrados no `config.go`, podendo ser alterados de acordo com a criação da base. Após isso, na raiz, basta executar o comando: `go run main.go`
+
+== Executando a Aplicação
+
+Para inserir um `Artista` no catálogo:
+
+```
+curl --location --request POST 'localhost:9000/api/artist' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Delvon Lamarr Organ Trio",
+  "genre": "soul-jazz",
+  "country": "Estados Unidos"
+}
+'
+```
+
+Para consultar todos os `Artistas` inseridos: 
+
+```
+curl localhost:9000/api/artist
+```
